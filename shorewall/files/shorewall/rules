@@ -1,0 +1,36 @@
+{%- from "shorewall/defaults.yaml" import rawmap with context -%}
+{%- set datamap = salt['grains.filter_by'](rawmap, merge=salt['pillar.get']('shorewall:lookup')) -%}
+# Shorewall version 4 - Rules File
+#
+# For information on the settings in this file, type "man shorewall-rules"
+#
+# The manpage is also online at
+# http://www.shorewall.net/manpages/shorewall-rules.html
+#
+######################################################################################################################################################################################################
+#ACTION		SOURCE		DEST		PROTO	DEST	SOURCE		ORIGINAL	RATE		USER/	MARK	CONNLIMIT	TIME		HEADERS		SWITCH		HELPER
+#							PORT(S)	PORT(S)		DEST		LIMIT		GROUP
+?SECTION ALL
+{%- for r in salt['pillar.get']('shorewall:rules:all')|default('[]') %}
+{{ r }}
+{%- endfor %}
+?SECTION ESTABLISHED
+{%- for r in salt['pillar.get']('shorewall:rules:established')|default('[]') %}
+{{ r }}
+{%- endfor %}
+?SECTION RELATED
+{%- for r in salt['pillar.get']('shorewall:rules:related')|default('[]') %}
+{{ r }}
+{%- endfor %}
+?SECTION INVALID
+{%- for r in salt['pillar.get']('shorewall:rules:invalid')|default('[]') %}
+{{ r }}
+{%- endfor %}
+?SECTION UNTRACKED
+{%- for r in salt['pillar.get']('shorewall:rules:untracked')|default('[]') %}
+{{ r }}
+{%- endfor %}
+?SECTION NEW
+{%- for r in salt['pillar.get']('shorewall:rules:new')|default('[]') %}
+{{ r }}
+{%- endfor %}

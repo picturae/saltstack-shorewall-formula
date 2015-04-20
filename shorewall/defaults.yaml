@@ -9,13 +9,16 @@ Debian:
       manage:
         - interfaces
         - policy
+        - rules
         - shorewall_default
         - shorewall_conf
         - zones
-      policy:
-        path: /etc/shorewall/policy
       interfaces:
         path: /etc/shorewall/interfaces
+      policy:
+        path: /etc/shorewall/policy
+      rules:
+        path: /etc/shorewall/rules
       shorewall_default:
         path: /etc/default/shorewall
       shorewall_conf:

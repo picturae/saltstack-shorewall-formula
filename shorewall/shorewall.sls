@@ -30,6 +30,17 @@ shorewall:
     - group: {{ datamap.shorewall.config.policy.group|default('root') }}
 {% endif %}
 
+{% if datamap.shorewall.config.rules|default(True) %}
+{{ datamap.shorewall.config.rules.path }}:
+  file:
+    - managed
+    - source: {{ datamap.shorewall.config.rules.template_path|default('salt://shorewall/files/shorewall/rules') }}
+    - template: {{ datamap.shorewall.config.rules.template_renderer|default('jinja') }}
+    - mode: {{ datamap.shorewall.config.rules.mode|default('644') }}
+    - user: {{ datamap.shorewall.config.rules.user|default('root') }}
+    - group: {{ datamap.shorewall.config.rules.group|default('root') }}
+{% endif %}
+
 {% if datamap.shorewall.config.shorewall_default.manage|default(True) %}
 {{ datamap.shorewall.config.shorewall_default.path }}:
   file:
