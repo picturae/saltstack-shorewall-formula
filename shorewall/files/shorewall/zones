@@ -1,0 +1,17 @@
+{%- from "shorewall/defaults.yaml" import rawmap with context -%}
+{%- set datamap = salt['grains.filter_by'](rawmap, merge=salt['pillar.get']('shorewall:lookup')) -%}
+#
+# Shorewall version 4 - Zones File
+#
+# For information about this file, type "man shorewall-zones"
+#
+# The manpage is also online at
+# http://www.shorewall.net/manpages/shorewall-zones.html
+#
+###############################################################################
+#ZONE	TYPE		OPTIONS		IN			OUT
+#					OPTIONS			OPTIONS
+fw	firewall
+{%- for z in salt['pillar.get']('shorewall:zones')|default([]) %}
+{{ z }}
+{%- endfor %}

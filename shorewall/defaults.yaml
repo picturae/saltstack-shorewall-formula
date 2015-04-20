@@ -1,0 +1,34 @@
+{% load_yaml as rawmap %}
+Debian:
+  shorewall:
+    pkgs:
+      - shorewall
+    service:
+      name: shorewall
+    config:
+      manage:
+        - interfaces
+        - policy
+        - shorewall_default
+        - shorewall_conf
+        - zones
+      policy:
+        path: /etc/shorewall/policy
+      interfaces:
+        path: /etc/shorewall/interfaces
+      shorewall_default:
+        path: /etc/default/shorewall
+      shorewall_conf:
+        {# should be path, but is fpath due to collission #}
+        fpath: /etc/shorewall/shorewall.conf
+      zones:
+        path: /etc/shorewall/zones
+  shorewall6:
+    pkgs:
+      - shorewall6
+    service:
+      name: shorewall6
+    config:
+      manage:
+        - shorewall_conf
+{% endload %}
