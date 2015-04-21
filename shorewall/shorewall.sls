@@ -19,6 +19,17 @@ shorewall:
     - group: {{ datamap.shorewall.config.interfaces.group|default('root') }}
 {% endif %}
 
+{% if datamap.shorewall.config.masq|default(True) %}
+{{ datamap.shorewall.config.masq.path }}:
+  file:
+    - managed
+    - source: {{ datamap.shorewall.config.masq.template_path|default('salt://shorewall/files/shorewall/masq') }}
+    - template: {{ datamap.shorewall.config.masq.template_renderer|default('jinja') }}
+    - mode: {{ datamap.shorewall.config.masq.mode|default('644') }}
+    - user: {{ datamap.shorewall.config.masq.user|default('root') }}
+    - group: {{ datamap.shorewall.config.masq.group|default('root') }}
+{% endif %}
+
 {% if datamap.shorewall.config.policy|default(True) %}
 {{ datamap.shorewall.config.policy.path }}:
   file:
