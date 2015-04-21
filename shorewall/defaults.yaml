@@ -36,8 +36,23 @@ Debian:
       name: shorewall6
     config:
       manage:
+        - interfaces
+        - policy
+        - rules
+        - shorewall6_default
         - shorewall6_conf
+        - zones
+      interfaces:
+        path: /etc/shorewall6/interfaces
+      policy:
+        path: /etc/shorewall6/policy
+      rules:
+        path: /etc/shorewall6/rules
+      shorewall6_default:
+        path: /etc/default/shorewall6
       shorewall6_conf:
         {# should be path, but is fpath due to collission #}
         fpath: /etc/shorewall6/shorewall6.conf
+      zones:
+        path: /etc/shorewall6/zones
 {% endload %}

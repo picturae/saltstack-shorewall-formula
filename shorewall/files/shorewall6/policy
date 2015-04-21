@@ -1,4 +1,5 @@
-#
+{%- from "shorewall/defaults.yaml" import rawmap with context -%}
+{%- set datamap = salt['grains.filter_by'](rawmap, merge=salt['pillar.get']('shorewall6:lookup')) -%}#
 # Shorewall6 version 4 - Policy File
 #
 # For information about entries in this file, type "man shorewall6-policy"
@@ -9,3 +10,6 @@
 ###############################################################################
 #SOURCE	DEST	POLICY		LOG	LIMIT:		CONNLIMIT:
 #				LEVEL	BURST		MASK
+{%- for p in salt['pillar.get']('shorewall6:policy')|default('[]') %}
+{{ p }}
+{%- endfor %}

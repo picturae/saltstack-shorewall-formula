@@ -1,7 +1,9 @@
+{%- from "shorewall/defaults.yaml" import rawmap with context -%}
+{%- set datamap = salt['grains.filter_by'](rawmap, merge=salt['pillar.get']('shorewall6:lookup')) -%}
 # prevent startup with default configuration
 # set the following varible to 1 in order to allow Shorewall6 to start
 
-startup=0
+startup={{datamap.shorewall6.config.shorewall6_default.startup|default('0')}}
 
 # if your Shorewall6 configuration requires detection of the ip address of a
 # ppp interface, you must list such interfaces in "wait_interface" to get
@@ -18,27 +20,27 @@ startup=0
 #
 # Startup options
 #
-OPTIONS=""
+OPTIONS={{datamap.shorewall6.config.shorewall6_default.options|default('""')}}
 
 #
 # Start options
 #
-STARTOPTIONS=""
+STARTOPTIONS={{datamap.shorewall6.config.shorewall6_default.startoptions|default('""')}
 
 #
 # Restart options
 #
-RESTARTOPTIONS=""
+RESTARTOPTIONS={{datamap.shorewall6.config.shorewall6_default.restartoptions|default('""')}}
 
 #
 # Init Log -- if /dev/null, use the STARTUP_LOG defined in shorewall.conf
 #
-INITLOG=/dev/null
+INITLOG={{datamap.shorewall6.config.shorewall6_default.initlog|default('/dev/null')}}
 
 #
 # Set this to 1 to cause '/etc/init.d/shorewall6 stop' to place the firewall in
 # a safe state rather than to open it
 #
-SAFESTOP=0
+SAFESTOP={{datamap.shorewall.config.shorewall6_default.safestop|default('0')}}
 
 # EOF
