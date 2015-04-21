@@ -25,7 +25,7 @@ OPTIONS={{datamap.shorewall6.config.shorewall6_default.options|default('""')}}
 #
 # Start options
 #
-STARTOPTIONS={{datamap.shorewall6.config.shorewall6_default.startoptions|default('""')}
+STARTOPTIONS={{datamap.shorewall6.config.shorewall6_default.startoptions|default('""')}}
 
 #
 # Restart options
