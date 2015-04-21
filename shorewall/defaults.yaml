@@ -36,5 +36,8 @@ Debian:
       name: shorewall6
     config:
       manage:
-        - shorewall_conf
+        - shorewall6_conf
+      shorewall6_conf:
+        {# should be path, but is fpath due to collission #}
+        fpath: /etc/shorewall6/shorewall6.conf
 {% endload %}
