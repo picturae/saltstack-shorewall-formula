@@ -41,15 +41,15 @@ shorewall6:
     - group: {{ datamap.shorewall6.config.rules.group|default('root') }}
 {% endif %}
 
-{% if datamap.shorewall6.config.shorewall_default.manage|default(True) %}
-{{ datamap.shorewall6.config.shorewall_default.path }}:
+{% if datamap.shorewall6.config.shorewall6_default.manage|default(True) %}
+{{ datamap.shorewall6.config.shorewall6_default.path }}:
   file:
     - managed
-    - source: {{ datamap.shorewall6.config.shorewall_default.template_path|default('salt://shorewall/files/shorewall6/shorewall6') }}
-    - template: {{ datamap.shorewall6.config.shorewall_default.template_renderer|default('jinja') }}
-    - mode: {{ datamap.shorewall6.config.shorewall_default.mode|default('644') }}
-    - user: {{ datamap.shorewall6.config.shorewall_default.user|default('root') }}
-    - group: {{ datamap.shorewall6.config.shorewall_default.group|default('root') }}
+    - source: {{ datamap.shorewall6.config.shorewall6_default.template_path|default('salt://shorewall/files/shorewall6/shorewall6') }}
+    - template: {{ datamap.shorewall6.config.shorewall6_default.template_renderer|default('jinja') }}
+    - mode: {{ datamap.shorewall6.config.shorewall6_default.mode|default('644') }}
+    - user: {{ datamap.shorewall6.config.shorewall6_default.user|default('root') }}
+    - group: {{ datamap.shorewall6.config.shorewall6_default.group|default('root') }}
 {% endif %}
 
 {% if datamap.shorewall6.config.shorewall6_conf.manage|default(True) %}
