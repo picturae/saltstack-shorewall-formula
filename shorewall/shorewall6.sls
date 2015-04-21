@@ -14,7 +14,7 @@ shorewall6:
     - managed
     - source: {{ datamap.shorewall6.config.interfaces.template_path|default('salt://shorewall/files/shorewall6/interfaces') }}
     - template: {{ datamap.shorewall6.config.interfaces.template_renderer|default('jinja') }}
-    - mode: {{ datamap.shorewall6.config.interfaces.mode|default('644') }}
+    - mode: {{ datamap.shorewall6.config.interfaces.mode|default('640') }}
     - user: {{ datamap.shorewall6.config.interfaces.user|default('root') }}
     - group: {{ datamap.shorewall6.config.interfaces.group|default('root') }}
 {% endif %}
@@ -25,7 +25,7 @@ shorewall6:
     - managed
     - source: {{ datamap.shorewall6.config.policy.template_path|default('salt://shorewall/files/shorewall6/policy') }}
     - template: {{ datamap.shorewall6.config.policy.template_renderer|default('jinja') }}
-    - mode: {{ datamap.shorewall6.config.policy.mode|default('644') }}
+    - mode: {{ datamap.shorewall6.config.policy.mode|default('640') }}
     - user: {{ datamap.shorewall6.config.policy.user|default('root') }}
     - group: {{ datamap.shorewall6.config.policy.group|default('root') }}
 {% endif %}
@@ -36,7 +36,7 @@ shorewall6:
     - managed
     - source: {{ datamap.shorewall6.config.rules.template_path|default('salt://shorewall/files/shorewall6/rules') }}
     - template: {{ datamap.shorewall6.config.rules.template_renderer|default('jinja') }}
-    - mode: {{ datamap.shorewall6.config.rules.mode|default('644') }}
+    - mode: {{ datamap.shorewall6.config.rules.mode|default('640') }}
     - user: {{ datamap.shorewall6.config.rules.user|default('root') }}
     - group: {{ datamap.shorewall6.config.rules.group|default('root') }}
 {% endif %}
@@ -47,7 +47,7 @@ shorewall6:
     - managed
     - source: {{ datamap.shorewall6.config.shorewall6_default.template_path|default('salt://shorewall/files/shorewall6/shorewall6') }}
     - template: {{ datamap.shorewall6.config.shorewall6_default.template_renderer|default('jinja') }}
-    - mode: {{ datamap.shorewall6.config.shorewall6_default.mode|default('644') }}
+    - mode: {{ datamap.shorewall6.config.shorewall6_default.mode|default('640') }}
     - user: {{ datamap.shorewall6.config.shorewall6_default.user|default('root') }}
     - group: {{ datamap.shorewall6.config.shorewall6_default.group|default('root') }}
 {% endif %}
@@ -58,7 +58,7 @@ shorewall6:
     - managed
     - source: {{ datamap.shorewall6.config.shorewall6_conf.template_path|default('salt://shorewall/files/shorewall6/shorewall6.conf') }}
     - template: {{ datamap.shorewall6.config.shorewall6_conf.template_renderer|default('jinja') }}
-    - mode: {{ datamap.shorewall6.config.shorewall6_conf.mode|default('644') }}
+    - mode: {{ datamap.shorewall6.config.shorewall6_conf.mode|default('640') }}
     - user: {{ datamap.shorewall6.config.shorewall6_conf.user|default('root') }}
     - group: {{ datamap.shorewall6.config.shorewall6_conf.group|default('root') }}
 {% endif %}
@@ -69,7 +69,7 @@ shorewall6:
     - managed
     - source: {{ datamap.shorewall6.config.zones.template_path|default('salt://shorewall/files/shorewall6/zones') }}
     - template: {{ datamap.shorewall6.config.zones.template_renderer|default('jinja') }}
-    - mode: {{ datamap.shorewall6.config.zones.mode|default('644') }}
+    - mode: {{ datamap.shorewall6.config.zones.mode|default('640') }}
     - user: {{ datamap.shorewall6.config.zones.user|default('root') }}
     - group: {{ datamap.shorewall6.config.zones.group|default('root') }}
 {% endif %}
