@@ -41,6 +41,6 @@ INITLOG={{datamap.shorewall6.config.shorewall6_default.initlog|default('/dev/nul
 # Set this to 1 to cause '/etc/init.d/shorewall6 stop' to place the firewall in
 # a safe state rather than to open it
 #
-SAFESTOP={{datamap.shorewall.config.shorewall6_default.safestop|default('0')}}
+SAFESTOP={{datamap.shorewall6.config.shorewall6_default.safestop|default('0')}}
 
 # EOF
