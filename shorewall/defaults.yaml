@@ -6,6 +6,7 @@ Debian:
     service:
       name: shorewall
     config:
+      dir: /etc/shorewall
       manage:
         - interfaces
         - masq
