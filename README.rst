@@ -15,7 +15,6 @@ TODO
 
 * restart shorewall after update
 * support other systems than Debian
-* create init.sls to install both shorewall and shorewall6
 
 Available states
 ----------------
