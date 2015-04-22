@@ -1,4 +1,10 @@
 shorewall:
+  lookup:
+    config:
+      manage:
+        - masq
+      masq:
+        - ensure: absent
   zones:
     - "net  ipv4"
     - "pipo ipv4"
