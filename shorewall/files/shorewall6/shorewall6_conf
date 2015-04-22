@@ -80,7 +80,7 @@ NFACCT={{datamap.shorewall6.config.shorewall6_conf.nfacct|default('')}}
 
 PERL={{datamap.shorewall6.config.shorewall6_conf.perl|default('/usr/bin/perl')}}
 
-PATH={{datamap.shorewall6.config.shorewall6_conf.path|default('"/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin"')}}
+PATH={{datamap.shorewall6.config.shorewall6_conf.syspath|default('"/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin"')}}
 
 RESTOREFILE={{datamap.shorewall6.config.shorewall6_conf.restorefile|default('restore')}}
 
