@@ -81,7 +81,7 @@ MODULESDIR={{datamap.shorewall.config.shorewall_conf.modulesdir|default('')}}
 
 NFACCT={{datamap.shorewall.config.shorewall_conf.nfacct|default('')}}
 
-PATH={{datamap.shorewall.config.shorewall_conf.path|default('"/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin"')}}
+PATH={{datamap.shorewall.config.shorewall_conf.syspath|default('"/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin"')}}
 
 PERL={{datamap.shorewall.config.shorewall_conf.perl|default('/usr/bin/perl')}}
 
