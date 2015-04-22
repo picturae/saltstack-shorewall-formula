@@ -7,6 +7,14 @@ shorewall6:
   pkg:
     - installed
     - pkgs: {{ datamap.shorewall6.pkgs }}
+  service:
+    - running
+    - name: {{ datamap.shorewall6.service.name }}
+    - enable: {{ datamap.shorewall6.service.enable|default(True) }}
+    - watch:
+      - file: {{ datamap.shorewall6.config.dir }}/*
+    - require:
+      - pkg: shorewall6
 
 {% if datamap.shorewall6.config.interfaces|default(True) %}
 {{ datamap.shorewall6.config.interfaces.path }}:

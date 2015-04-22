@@ -35,6 +35,7 @@ Debian:
     service:
       name: shorewall6
     config:
+      dir: /etc/shorewall6
       manage:
         - interfaces
         - policy
