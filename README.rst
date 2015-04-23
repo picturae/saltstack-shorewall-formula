@@ -13,7 +13,6 @@ NOTICE BEFORE USE
 TODO
 ----
 
-* restart shorewall after update
 * support other systems than Debian
 
 Available states
@@ -21,6 +20,10 @@ Available states
 
 .. contents::
   :local:
+
+``shorewall``
+-------------
+Deploy both shorewall and shorewall6
 
 ``shorewall.shorewall``
 -----------------------
